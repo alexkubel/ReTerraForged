@@ -49,11 +49,15 @@ public class Cell {
     public BiomeType biome;
     public float erosion;
     public float weirdness;
+    // Terrain-selected erosion before rivers and climate apply biome-specific overrides.
+    public float terrainErosion;
     public float temperature;
     public float moisture;
 
     public float beachNoise;
     public RiverCarverSettings.RiverZone riverZone = RiverCarverSettings.RiverZone.None;
+    public byte flowAngle;
+    public boolean hasFlow;
 
     public Cell() {
         this.regionMoisture = 0.5F;
@@ -92,6 +96,7 @@ public class Cell {
         this.biome = other.biome;
         this.erosion = other.erosion;
         this.weirdness = other.weirdness;
+        this.terrainErosion = other.terrainErosion;
         this.temperature = other.temperature;
         this.moisture = other.moisture;
         this.beachNoise = other.beachNoise;
@@ -99,6 +104,8 @@ public class Cell {
         this.riverWaterLevel = other.riverWaterLevel;
         this.riverZone = other.riverZone;
         this.waterTable = other.waterTable;
+        this.flowAngle = other.flowAngle;
+        this.hasFlow = other.hasFlow;
         this.globalContinentScale = other.globalContinentScale;
     }
 

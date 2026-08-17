@@ -1,5 +1,7 @@
 package raccoonman.reterraforged.mixin;
 
+import java.util.List;
+
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -13,6 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import net.minecraft.core.SectionPos;
 import net.minecraft.util.Mth;
+import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Aquifer;
 import net.minecraft.world.level.levelgen.DensityFunction;
@@ -29,6 +32,7 @@ import raccoonman.reterraforged.world.worldgen.GeneratorContext;
 import raccoonman.reterraforged.world.worldgen.MaxHeightUtil;
 import raccoonman.reterraforged.world.worldgen.RTFChunk;
 import raccoonman.reterraforged.world.worldgen.RTFRandomState;
+import raccoonman.reterraforged.world.worldgen.biome.RTFClimateSampler;
 import raccoonman.reterraforged.world.worldgen.cell.Cell;
 import raccoonman.reterraforged.world.worldgen.densityfunction.CellSampler;
 import raccoonman.reterraforged.world.worldgen.densityfunction.tile.Tile;
@@ -101,9 +105,10 @@ class MixinNoiseChunk {
 				Aquifer.FluidStatus lava = new Aquifer.FluidStatus(globalLavaLevel, Blocks.LAVA.defaultBlockState());
 				Aquifer.FluidStatus defaultFluid = new Aquifer.FluidStatus(seaLevel, noiseGeneratorSettings.defaultFluid());
 
-				int oceanLavaLevel = Math.min(globalLavaLevel, seaLevel - oceanDepth - 5);
+				int oceanLavaLevel = seaLevel - oceanDepth - 5;
+				boolean oceanLavaAdjustmentNeeded = globalLavaLevel > oceanLavaLevel;
 
-				if (oceanLavaLevel == globalLavaLevel || globalLavaLevel >= seaLevel) {
+				if (!oceanLavaAdjustmentNeeded) {
 					return (x, y, z) -> {
 						if (y < Math.min(globalLavaLevel, seaLevel)) {
 							return lava;
@@ -165,6 +170,22 @@ class MixinNoiseChunk {
 			}
 		}
 		return fluidPicker;
+	}
+
+	@Inject(
+		at = @At("RETURN"),
+		method = "cachedClimateSampler"
+	)
+	private void reterraforged$configureUndergroundBiomeBanding(
+		NoiseRouter noiseRouter,
+		List<Climate.ParameterPoint> spawnTarget,
+		CallbackInfoReturnable<Climate.Sampler> callback
+	) {
+		if ((Object) this.randomState instanceof RTFRandomState randomState
+			&& randomState.preset() != null
+			&& (Object) callback.getReturnValue() instanceof RTFClimateSampler sampler) {
+			sampler.setUndergroundBiomeBandingPreset(randomState.preset(), randomState.seed());
+		}
 	}
 
 	@Inject(
