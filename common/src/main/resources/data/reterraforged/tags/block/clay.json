@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "minecraft:clay"
+    "minecraft:clay",
+	{
+		"id": "tfmg:fireclay",
+		"required": false
+	}
   ]
 }

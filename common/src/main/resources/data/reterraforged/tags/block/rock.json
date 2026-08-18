@@ -4,6 +4,61 @@
     "minecraft:stone",
     "minecraft:granite",
     "minecraft:andesite",
-    "minecraft:diorite"
+    "minecraft:diorite",
+	"minecraft:tuff",
+	"minecraft:calcite",
+	"minecraft:smooth_basalt",
+	{
+		"id":"akidecormod:nathan_shale",
+		"required":false
+	},
+	{
+		"id":"akidecormod:gratestone",
+		"required":false
+	},
+	{
+		"id":"akidecormod:lakestone",
+		"required":false
+	},
+	{
+		"id":"akidecormod:gratestone_mossy",
+		"required":false
+	},
+	{
+		"id":"akidecormod:portland_stone",
+		"required":false
+	},
+	{
+		"id":"akidecormod:midhurst_stone",
+		"required":false
+	},
+	{
+		"id":"akidecormod:whitestone_tuff",
+		"required":false
+	},
+	{
+		"id":"akidecormod:highland_tuff",
+		"required":false
+	},
+	{
+		"id":"natures_spirit:chert",
+		"required":false
+	},
+	{
+		"id":"natures_spirit:travertine"
+		"required":false
+	},
+	{
+		"id":"quark:limestone"
+		"required":false
+	},
+	{
+		"id":"quark:shale"
+		"required":false
+	},
+	{
+		"id":"quark:jasper"
+		"required":false
+	}
   ]
 }

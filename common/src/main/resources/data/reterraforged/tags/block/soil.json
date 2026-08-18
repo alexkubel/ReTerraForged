@@ -2,6 +2,26 @@
   "replace": false,
   "values": [
     "minecraft:dirt",
-    "minecraft:coarse_dirt"
+    "minecraft:coarse_dirt",
+	{
+		"id":"regions_unexplored:peat_dirt",
+		"required":false
+	},
+	{
+		"id":"regions_unexplored:peat_coarse_dirt",
+		"required":false
+	},
+	{
+		"id":"regions_unexplored:silt_dirt",
+		"required":false
+	},
+	{
+		"id":"regions_unexplored:silt_coarse_dirt"
+		"required":false
+	},
+	{
+		"id":"natures_spirit:sandy_soil"
+		"required":false
+	}
   ]
 }

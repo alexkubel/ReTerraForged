@@ -2,6 +2,14 @@
   "replace": false,
   "values": [
     "minecraft:sand",
-    "minecraft:gravel"
+    "minecraft:gravel",
+	{
+		"id": "twigs:silt",
+		"required": false
+	},
+	{
+		"id": "natures_spirit:pink_sand",
+		"required": false
+	}
   ]
 }
