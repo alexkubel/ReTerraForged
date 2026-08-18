@@ -58,7 +58,8 @@ public class ErodeFeature extends Feature<Config> {
             new WeightedBlockEntry(Blocks.COARSE_DIRT.defaultBlockState(), 1),
             new WeightedBlockEntry(Blocks.ANDESITE.defaultBlockState(), 2),
             new WeightedBlockEntry(Blocks.TUFF.defaultBlockState(), 2),
-            new WeightedBlockEntry(Blocks.MOSS_BLOCK.defaultBlockState(), 1)
+            new WeightedBlockEntry(Blocks.MOSS_BLOCK.defaultBlockState(), 1),
+            new WeightedBlockEntry(ModBlock.FLINTSTONE.get().defaultBlockState(), 2)
     ));
 
     private static final WeightedBlockSelector DIRT_MATERIALS = new WeightedBlockSelector(List.of(

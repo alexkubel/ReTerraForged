@@ -34,7 +34,6 @@ import raccoonman.reterraforged.world.worldgen.densityfunction.tile.Tile;
 import raccoonman.reterraforged.world.worldgen.feature.ErodeFeature.Config;
 import raccoonman.reterraforged.world.worldgen.noise.module.Noise;
 import raccoonman.reterraforged.world.worldgen.noise.module.Noises;
-import uk.nordale.akidecor.blocks.ModBlock;
 
 import java.util.List;
 import java.util.Map;

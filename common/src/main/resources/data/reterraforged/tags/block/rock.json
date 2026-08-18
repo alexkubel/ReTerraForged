@@ -45,19 +45,27 @@
 		"required":false
 	},
 	{
-		"id":"natures_spirit:travertine"
+		"id":"natures_spirit:travertine",
 		"required":false
 	},
 	{
-		"id":"quark:limestone"
+		"id":"natures_spirit:white_chalk",
 		"required":false
 	},
 	{
-		"id":"quark:shale"
+		"id":"regions_unexplored:chalk",
 		"required":false
 	},
 	{
-		"id":"quark:jasper"
+		"id":"quark:limestone",
+		"required":false
+	},
+	{
+		"id":"quark:shale",
+		"required":false
+	},
+	{
+		"id":"quark:jasper",
 		"required":false
 	}
   ]

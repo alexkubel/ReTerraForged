@@ -23,7 +23,7 @@ subprojects {
     dependencies {
         minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
         mappings loom.officialMojangMappings()
-        implementation 'uk.nordale:akidecormod'
+        
     }
 }
 
@@ -47,6 +47,9 @@ allprojects {
         }
     }
 
+    dependencies{
+        implementation 'uk.nordale:akidecormod'
+    }
     tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
         options.release = 21
