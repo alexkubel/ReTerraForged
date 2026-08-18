@@ -34,6 +34,7 @@ import raccoonman.reterraforged.world.worldgen.densityfunction.tile.Tile;
 import raccoonman.reterraforged.world.worldgen.feature.ErodeFeature.Config;
 import raccoonman.reterraforged.world.worldgen.noise.module.Noise;
 import raccoonman.reterraforged.world.worldgen.noise.module.Noises;
+import uk.nordale.akidecormod.block.ModBlock;
 
 import java.util.List;
 import java.util.Map;
@@ -57,7 +58,8 @@ public class ErodeFeature extends Feature<Config> {
             new WeightedBlockEntry(Blocks.COARSE_DIRT.defaultBlockState(), 1),
             new WeightedBlockEntry(Blocks.ANDESITE.defaultBlockState(), 2),
             new WeightedBlockEntry(Blocks.TUFF.defaultBlockState(), 2),
-            new WeightedBlockEntry(Blocks.MOSS_BLOCK.defaultBlockState(), 1)
+            new WeightedBlockEntry(Blocks.MOSS_BLOCK.defaultBlockState(), 1),
+			new WeightedBlockEntry(ModBlock.FLINTSTONE.defaultBlockState(),2)
     ));
 
     private static final WeightedBlockSelector DIRT_MATERIALS = new WeightedBlockSelector(List.of(

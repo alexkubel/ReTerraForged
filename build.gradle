@@ -23,6 +23,7 @@ subprojects {
     dependencies {
         minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
         mappings loom.officialMojangMappings()
+        implementation 'uk.nordale:akidecormod'
     }
 }
 
@@ -41,6 +42,9 @@ allprojects {
         maven { url "https://maven.architectury.dev/" }
         maven { url "https://maven.fabricmc.net/" }
         gradlePluginPortal()
+        flatDir{
+            dir 'libs'
+        }
     }
 
     tasks.withType(JavaCompile) {
