@@ -16,11 +16,11 @@
 		"required":false
 	},
 	{
-		"id":"regions_unexplored:silt_coarse_dirt"
+		"id":"regions_unexplored:silt_coarse_dirt",
 		"required":false
 	},
 	{
-		"id":"natures_spirit:sandy_soil"
+		"id":"natures_spirit:sandy_soil",
 		"required":false
 	}
   ]
