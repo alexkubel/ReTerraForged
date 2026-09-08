@@ -126,3 +126,5 @@ run/
 .project
 
 *.launch
+gradle.properties
+.vscode/settings.json
